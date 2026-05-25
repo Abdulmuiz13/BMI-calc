@@ -1,0 +1,152 @@
+.calculator-form-card {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.required {
+  color: #ff4466;
+}
+
+.form-input, .form-select {
+  background: rgba(11, 17, 32, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  color: white;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: rgba(11, 17, 32, 0.7);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath fill='white' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 10px 6px;
+  padding-right: 2.5rem;
+  background-clip: padding-box;
+}
+
+.form-select option {
+  background: rgba(11, 17, 32, 0.95);
+  color: #ffffff;
+}
+
+.form-input:focus, .form-select:focus {
+  outline: none;
+  border-color: #00ff88;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+.form-input[type='number'] {
+  color: #ffffff;
+  background: rgba(11, 17, 32, 0.7);
+}
+
+
+
+.form-input.error {
+  border-color: #ff4466;
+}
+
+.error-text {
+  color: #ff4466;
+  font-size: 0.8rem;
+}
+
+.gender-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.gender-btn.active {
+  background: linear-gradient(135deg, #00ff88, #00d4ff);
+  color: #0a0e1a;
+  border-color: transparent;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  flex: 1;
+  background: linear-gradient(135deg, #00ff88, #00d4ff);
+  border: none;
+  padding: 1rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+}
+
+.btn-secondary {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 40px;
+  color: white;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .calculator-form-card {
+    padding: 1.5rem;
+  }
+}

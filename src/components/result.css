@@ -1,0 +1,129 @@
+.results-section {
+  margin-top: 3rem;
+}
+
+.results-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.greeting {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.category-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.bmi-range {
+  margin-top: 1rem;
+}
+
+.range-labels {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.range-labels span {
+  flex-basis: 46.25%;
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.range-labels span.normal {
+  flex-basis: 16.25%;
+}
+
+.range-labels span.overweight {
+  flex-basis: 12.5%;
+}
+
+.range-labels span.obese {
+  flex-basis: 25%;
+}
+
+.range-bar {
+  position: relative;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+}
+
+.range-segments {
+  display: flex;
+  height: 100%;
+}
+
+.range-segments .segment {
+  flex-grow: 1;
+}
+
+.range-segments .segment.underweight {
+  background: rgba(0, 212, 255, 0.35);
+  flex-basis: 46.25%;
+}
+
+.range-segments .segment.normal {
+  background: rgba(0, 255, 136, 0.35);
+  flex-basis: 16.25%;
+}
+
+.range-segments .segment.overweight {
+  background: rgba(255, 170, 0, 0.35);
+  flex-basis: 12.5%;
+}
+
+.range-segments .segment.obese {
+  background: rgba(255, 68, 102, 0.35);
+  flex-basis: 25%;
+}
+
+.range-indicator {
+  position: absolute;
+  top: -3px;
+  width: 3px;
+  height: 18px;
+  background: #ffffff;
+  border-radius: 2px;
+  transform: translateX(-50%);
+  transition: left 0.3s ease;
+}
+
+.result-note {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.health-summary {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
