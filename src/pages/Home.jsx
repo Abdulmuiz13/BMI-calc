@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import HeroSection from '../components/Hero';
 import HealthTips from '../components/HealthTips';
 import Navbar from '../components/Navbar';
@@ -53,6 +53,13 @@ const HomePage = () => {
     setResults(null);
     setBmiCategory('');
   };
+
+  useEffect(() => {
+    if (results && !loading) {
+      const resultElement = document.getElementById('results');
+      resultElement?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [results, loading]);
 
   return (
     <div className="homepage">

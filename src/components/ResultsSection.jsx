@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import ResultCard from './ResultCard';
 import BMICircle from './BMICircle';
 import './result.css';
@@ -49,7 +49,7 @@ const ResultsSection = ({ results }) => {
   };
 
   return (
-    <div className="results-section">
+    <div className="results-section" id="results">
       <h2 className="results-title">Your Health Report</h2>
       {name && <p className="greeting">Hello, {name}! Here's your personalized health analysis:</p>}
       
