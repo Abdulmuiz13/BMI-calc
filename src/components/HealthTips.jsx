@@ -35,11 +35,23 @@ const HealthTips = ({ bmiCategory, weight }) => {
   const tips = tipsByCategory[bmiCategory] || tipsByCategory.Normal;
 
   useEffect(() => {
+    setCurrentTipIndex(0);
+  }, [bmiCategory]);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTipIndex((prev) => (prev + 1) % tips.length);
     }, 5000);
     return () => clearInterval(interval);
   }, [tips.length]);
+
+  const prevTip = () => {
+    setCurrentTipIndex((prev) => (prev - 1 + tips.length) % tips.length);
+  };
+
+  const nextTip = () => {
+    setCurrentTipIndex((prev) => (prev + 1) % tips.length);
+  };
 
   const getRecommendation = () => {
     if (bmiCategory === 'Underweight') return { color: '#00d4ff', action: 'Gain Weight Healthily' };
@@ -60,11 +72,19 @@ const HealthTips = ({ bmiCategory, weight }) => {
       </div>
       
       <div className="tips-carousel">
+        <button className="carousel-arrow prev-arrow" onClick={prevTip} aria-label="Previous tip">
+          ‹
+        </button>
+
         <div className="tip-card glass-card" key={currentTipIndex}>
           <div className="tip-icon">{tips[currentTipIndex].icon}</div>
           <h3>{tips[currentTipIndex].title}</h3>
           <p>{tips[currentTipIndex].description}</p>
         </div>
+
+        <button className="carousel-arrow next-arrow" onClick={nextTip} aria-label="Next tip">
+          ›
+        </button>
       </div>
       
       <div className="tips-dots">

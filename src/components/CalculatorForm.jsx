@@ -14,7 +14,7 @@ const CalculatorForm = ({ onCalculate, onReset, loading }) => {
 
   const validate = () => {
     const newErrors = {};
-    if (formData.age && (formData.age < 15 || formData.age > 120)) newErrors.age = 'Age must be 15-120';
+    if (formData.age && (formData.age < 2 || formData.age > 120)) newErrors.age = 'Age must be 2-120';
     if (formData.weight && (formData.weight < 20 || formData.weight > 300)) newErrors.weight = 'Weight must be 20-300 kg';
     if (formData.height && (formData.height < 100 || formData.height > 250)) newErrors.height = 'Height must be 100-250 cm';
     if (!formData.age) newErrors.age = 'Age is required';
